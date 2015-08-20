@@ -9,7 +9,7 @@ var debugMsg = function(msg) {
 
 var socket;
 $(document).ready(function() {
-    socket = io();
+    socket = io('http://localhost:3000');
 
     $("body").tooltip({ selector: '[data-toggle=tooltip]' });
 
