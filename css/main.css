@@ -1,0 +1,20 @@
+/*
+ * Fixes problem with Bootstrap not centering
+ */
+.center-block {
+    float: none;
+    margin: 0 auto;
+}
+
+
+img, .center-block {
+    padding: 10px;
+}
+
+li {
+    padding: 10px;
+}
+
+.table > tbody > tr > td {
+    vertical-align: middle;
+}
