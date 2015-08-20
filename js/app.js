@@ -9,7 +9,7 @@ var debugMsg = function(msg) {
 
 var socket;
 $(document).ready(function() {
-    socket = io('http://130.211.127.72:3000');
+    socket = io.connect('http://130.211.127.72:3000');
 
     $("body").tooltip({ selector: '[data-toggle=tooltip]' });
 
@@ -85,8 +85,9 @@ ngApp.controller('CtrlApply', ['$scope', '$location', '$timeout', function($scop
     };
 
     $scope.submitForm = function(formUsername, formPassword) {
+        debugMsg("Submit button has been pressed.")
         socket.on('registerUser', function(formUsername, formPassword) {
-            alert('User should be registered now!')
+            debugMsg('User should be registered now!')
         })
     }
 
