@@ -86,19 +86,12 @@ ngApp.controller('CtrlApply', ['$scope', '$location', '$timeout', function($scop
 
     $scope.submitForm = function(username, password) {
         debugMsg("Submit button has been pressed.")
-        socket.emit('registerUser', {username: username, password: password});
+        debugMsg("Username: " + username);
+        debugMsg("Password" + password)
+
+        var data = {'username' : username, 'password' : password };
+        socket.emit('registerUser', data);
         debugMsg('User should be registered now!')
     }
 
-    //Still in progress
-    $scope.verify = function(type) {
-        message = {};
-        switch(type) {
-            case 'email':
-                    console.log($scope.formEmail.$invalid);
-                break;
-            default:
-                debugMsg("VERIFY FUNCTION HAS FAILED!")
-        }
-    }
 }]);
