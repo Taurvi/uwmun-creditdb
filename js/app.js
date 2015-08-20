@@ -86,9 +86,8 @@ ngApp.controller('CtrlApply', ['$scope', '$location', '$timeout', function($scop
 
     $scope.submitForm = function(username, password) {
         debugMsg("Submit button has been pressed.")
-        socket.on('registerUser', function(username, password) {
-            debugMsg('User should be registered now!')
-        })
+        socket.emit('registerUser', {username: username, password: password});
+        debugMsg('User should be registered now!')
     }
 
     //Still in progress
